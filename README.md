@@ -21,5 +21,5 @@ A simple and engaging app that helps users decide what to eat by spinning a whee
 
 1. **Clone the repository:**
    ```bash
-   git clone ''''
+   git clone ''https://github.com/nanonite9/MealRandomizerApp.git''
 
