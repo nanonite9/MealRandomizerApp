@@ -8,3 +8,11 @@ struct ContentView: View {
         }
     }
 }
+
+Text(selectedMeal)
+    .accessibilityIdentifier("SelectedMealLabel") // Set accessibility identifier
+
+Button(action: spin) {
+    Text("Spin the Wheel")
+}
+.accessibilityIdentifier("Spin the Wheel") // Set accessibility identifier
