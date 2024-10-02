@@ -1,6 +1,7 @@
 # Meal Randomizer
 
 A mobile application designed to help users decide what to eat by spinning a wheel of meal options. Perfect for picky eaters and group decisions!
+This is a practice project taken from Coursera's Advanced Programming in Swift. This does not actually run _yet_ but it helped me have something to get my certificate!
 
 ## Installation
 
