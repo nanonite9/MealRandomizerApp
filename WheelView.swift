@@ -15,22 +15,23 @@ struct WheelView: View {
 
     var body: some View {
         VStack {
-            Image(resources/wheel.png) 
+            Image("Wheel") 
                 .resizable()
                 .scaledToFit()
                 .frame(width: 300, height: 300)
                 .rotationEffect(.degrees(isSpinning ? 360 : 0))
                 .animation(isSpinning ? Animation.linear(duration: 2).repeatCount(1, autoreverses: false) : .default, value: isSpinning)
-                .overlay(Text(selectedOption?.name ?? "").foregroundColor(.white))
+                //.overlay(Text(selectedOption?.name ?? "").foregroundColor(.white))
 
-            Button("Spin the Wheel") {
+            Button("Spin for a good time!") {
                 spinWheel()
             }
             .padding()
+            .accessibilityIdentifier("Spin the Wheel")
         }
-        .onAppear {
-            mealViewModel.loadOptions() // Load meal options
-        }
+        //.onAppear {
+        //    mealViewModel.loadOptions() // Load meal options
+        //}
     }
 
     private func spinWheel() {
@@ -40,6 +41,14 @@ struct WheelView: View {
             selectedOption = mealViewModel.mealOptions.randomElement()
             isSpinning = false
         }
+    }
+}
+
+// Using this preview as learned in the course
+struct WheelView_Previews: PreviewProvider {
+    static var previews: some View {
+        WheelView()
+            .environmentObject(MealViewModel())
     }
 }
 

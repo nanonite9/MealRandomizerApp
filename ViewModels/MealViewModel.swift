@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 
 class MealViewModel: ObservableObject {
-    @Published var mealOptions: [MealOption] = []
+    @Published var mealOptions: [MealOptionEntity] = []
 
     init() {
         loadOptions()
@@ -19,23 +19,30 @@ class MealViewModel: ObservableObject {
     func loadOptions() {
         let fetchRequest: NSFetchRequest<MealOptionEntity> = MealOptionEntity.fetchRequest()
         do {
-            let mealEntities = try CoreDataStack.shared.context.fetch(fetchRequest)
-            mealOptions = mealEntities.map { MealOption(name: $0.name ?? "", isFavorite: $0.isFavorite) }
+            //let mealEntities = try CoreDataStack.shared.context.fetch(fetchRequest)
+            //mealOptions = mealEntities.map { MealOption(name: $0.name ?? "", isFavorite: $0.isFavorite) }
+            mealOptions = try CoreDataStack.shared.context.fetch(fetchRequest)
         } catch {
             print("Failed to fetch meal options: \(error)")
         }
     }
 
-    func addMealOption(name: String) {
-        let newMeal = MealOptionEntity(context: CoreDataStack.shared.context)
-        newMeal.name = name
-        newMeal.isFavorite = false
-        saveContext()
+    func addMealOption(name: String, category: String, isFavourite: Bool = false) {
+        CoreDataStack.shared.addMealOption(name: name, category: category, isFavourite: isFavourite)
+        //let newMeal = MealOptionEntity(context: CoreDataStack.shared.context)
+        //newMeal.name = name
+        //newMeal.isFavorite = false
+        //saveContext()
         loadOptions()
     }
 
-    private func saveContext() {
+    //private func saveContext() {
+    //    CoreDataStack.shared.saveContext()
+    //}
+    func toggleFavourite(mealOption: MealOptionEntity) {
+        mealOption.isFavourite.toggle()
         CoreDataStack.shared.saveContext()
+        loadOptions()
     }
 }
 
