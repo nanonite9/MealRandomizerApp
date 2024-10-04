@@ -1,6 +1,8 @@
 import Foundation
 import CoreData
 
+
+// IF READING, I WILL UPDATE, IT'S JUST ON MY OTHER DEVICE !!!! 
 extension MealOptionEntity {
     
     // Fetch request for the MealOptionEntity
