@@ -1,3 +1,11 @@
+//
+//  MealViewModel.swift
+//  MealRandomizerApp
+//
+//  Created by Ayana N on 2024-09-23.
+//  Copyright © 2024 Ayana N. All rights reserved.
+//
+
 import Foundation
 import CoreData
 
@@ -30,3 +38,6 @@ class MealViewModel: ObservableObject {
         CoreDataStack.shared.saveContext()
     }
 }
+
+// This ViewModel handles the business logic for our meal options.
+// The @Published property wrapper automatically notifies observers when the value changes.

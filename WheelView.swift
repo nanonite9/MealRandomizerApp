@@ -1,3 +1,11 @@
+//
+//  WheelView.swift
+//  MealRandomizerApp
+//
+//  Created by Ayana N on 2024-09-23.
+//  Copyright © 2024 Ayana N. All rights reserved.
+//
+
 import SwiftUI
 
 struct WheelView: View {
@@ -7,7 +15,7 @@ struct WheelView: View {
 
     var body: some View {
         VStack {
-            Image(resources/wheel.png) // Replace with your wheel image
+            Image(resources/wheel.png) 
                 .resizable()
                 .scaledToFit()
                 .frame(width: 300, height: 300)
@@ -34,3 +42,5 @@ struct WheelView: View {
         }
     }
 }
+
+// This view handles the wheel spinning animation.

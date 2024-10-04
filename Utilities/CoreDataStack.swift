@@ -1,3 +1,11 @@
+//
+//  CoreDataStack.swift
+//  MealRandomizerApp
+//
+//  Created by Ayana N on 2024-09-23.
+//  Copyright © 2024 Ayana N. All rights reserved.
+//
+
 import CoreData
 import Foundation
 
@@ -47,3 +55,6 @@ func addMealOption(name: String, category: String, isFavorite: Bool) {
     }
 }
 */
+
+// This class handles all the Core Data stuff. 
+// Setting up the database and providing methods to interact with it.
