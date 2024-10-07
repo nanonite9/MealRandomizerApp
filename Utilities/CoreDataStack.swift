@@ -10,22 +10,29 @@ import CoreData
 import Foundation
 
 class CoreDataStack {
+    // "Singleton" instance
     static let shared = CoreDataStack()
+    
+    private init() {} // Ensures singleton usage
 
+    // The persistent container for the application
     lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "MealOptionModel")
         container.loadPersistentStores { (storeDescription, error) in
             if let error = error as NSError? {
+                // Replace this implementation with code to handle the error appropriately.
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         }
         return container
     }()
 
+    // The main context for the application
     var context: NSManagedObjectContext {
         return persistentContainer.viewContext
     }
 
+    // Saves changes in the Core Data context
     func saveContext() {
         let context = persistentContainer.viewContext
         if context.hasChanges {
@@ -37,7 +44,19 @@ class CoreDataStack {
             }
         }
     }
+
+    // Adds a new meal option to the Core Data store
+    func addMealOption(name: String, category: String, isFavorite: Bool) {
+        let newMealOption = MealOptionEntity(context: context)
+        newMealOption.name = name
+        newMealOption.category = category
+        newMealOption.isFavorite = isFavorite
+        
+        saveContext()
+    }
 }
+
+
 
 /*
 func addMealOption(name: String, category: String, isFavorite: Bool) {

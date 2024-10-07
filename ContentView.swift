@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+// Main container view for the app
 struct ContentView: View {
     @StateObject private var mealViewModel = MealViewModel()
 
@@ -26,4 +27,4 @@ struct ContentView: View {
     }
 }
 
-// This view sets up our tab-based navigation. systemImage to get built-in icons.
+// This sets up the tab-based navigation. systemImage to get built-in icons.
