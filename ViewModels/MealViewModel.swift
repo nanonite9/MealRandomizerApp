@@ -20,7 +20,7 @@ class MealViewModel: ObservableObject {
         let fetchRequest: NSFetchRequest<MealOptionEntity> = MealOptionEntity.fetchRequest()
         do {
             //let mealEntities = try CoreDataStack.shared.context.fetch(fetchRequest)
-            //mealOptions = mealEntities.map { MealOption(name: $0.name ?? "", isFavorite: $0.isFavorite) }
+            //mealOptions = mealEntities.map { MealOption(name: $0.name ?? "", isFavourite: $0.isFavourite) }
             mealOptions = try CoreDataStack.shared.context.fetch(fetchRequest)
         } catch {
             print("Failed to fetch meal options: \(error)")
@@ -31,7 +31,7 @@ class MealViewModel: ObservableObject {
         CoreDataStack.shared.addMealOption(name: name, category: category, isFavourite: isFavourite)
         //let newMeal = MealOptionEntity(context: CoreDataStack.shared.context)
         //newMeal.name = name
-        //newMeal.isFavorite = false
+        //newMeal.isFavourite = false
         //saveContext()
         loadOptions()
     }

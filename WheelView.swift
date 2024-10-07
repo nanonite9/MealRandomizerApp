@@ -15,7 +15,7 @@ struct WheelView: View {
 
     var body: some View {
         VStack {
-            Image("Wheel") 
+            Image("wheel", bundle: .main) 
                 .resizable()
                 .scaledToFit()
                 .frame(width: 300, height: 300)
@@ -28,6 +28,11 @@ struct WheelView: View {
             }
             .padding()
             .accessibilityIdentifier("Spin the Wheel")
+
+            if let selectedOption = selectedOption {
+                Text("Selected meal: \(selectedOption.name ?? "")")
+                .padding()
+            }
         }
         //.onAppear {
         //    mealViewModel.loadOptions() // Load meal options
