@@ -20,7 +20,6 @@ class CoreDataStack {
         let container = NSPersistentContainer(name: "MealOptionModel")
         container.loadPersistentStores { (storeDescription, error) in
             if let error = error as NSError? {
-                // Replace this implementation with code to handle the error appropriately.
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         }
@@ -34,7 +33,7 @@ class CoreDataStack {
 
     // Saves changes in the Core Data context
     func saveContext() {
-        let context = persistentContainer.viewContext
+        //let context = persistentContainer.viewContext
         if context.hasChanges {
             do {
                 try context.save()
@@ -46,11 +45,11 @@ class CoreDataStack {
     }
 
     // Adds a new meal option to the Core Data store
-    func addMealOption(name: String, category: String, isFavorite: Bool) {
+    func addMealOption(name: String, category: String, isFavourite: Bool) {
         let newMealOption = MealOptionEntity(context: context)
         newMealOption.name = name
         newMealOption.category = category
-        newMealOption.isFavorite = isFavorite
+        newMealOption.isFavourite = isFavourite
         
         saveContext()
     }
@@ -59,12 +58,12 @@ class CoreDataStack {
 
 
 /*
-func addMealOption(name: String, category: String, isFavorite: Bool) {
+func addMealOption(name: String, category: String, isFavourite: Bool) {
     let context = persistentContainer.viewContext // Your Core Data stack setup
     let newMealOption = MealOptionEntity(context: context)
     newMealOption.name = name
     newMealOption.category = category
-    newMealOption.isFavorite = isFavorite
+    newMealOption.isFavourite = isFavourite
     
     do {
         try context.save() // Save the new meal option to Core Data

@@ -15,7 +15,7 @@ struct WheelView: View {
 
     var body: some View {
         VStack {
-            Image("wheel", bundle: .main) 
+            Image("wheel") 
                 .resizable()
                 .scaledToFit()
                 .frame(width: 300, height: 300)

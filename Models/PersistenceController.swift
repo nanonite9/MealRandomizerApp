@@ -14,7 +14,7 @@ struct PersistenceController {
     let container: NSPersistentContainer
 
     init() {
-        container = NSPersistentContainer(name: MealModel.xcdatamodeld)
+        container = NSPersistentContainer(name: "MealModel")
         container.loadPersistentStores { description, error in
             if let error = error as NSError? {
                 // Handle error

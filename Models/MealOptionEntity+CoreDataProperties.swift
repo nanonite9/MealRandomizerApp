@@ -25,7 +25,7 @@ extension MealOptionEntity {
     @NSManaged public var category: String?
     
     // Indicates if the meal option is marked as a favourite by the user
-    @NSManaged public var isFavorite: Bool
+    @NSManaged public var isFavourite: Bool
     
     // Add a computed property for better usability
     var isFavouriteText: String {

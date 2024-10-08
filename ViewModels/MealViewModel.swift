@@ -19,8 +19,8 @@ class MealViewModel: ObservableObject {
     func loadOptions() {
         let fetchRequest: NSFetchRequest<MealOptionEntity> = MealOptionEntity.fetchRequest()
         do {
-            //let mealEntities = try CoreDataStack.shared.context.fetch(fetchRequest)
-            //mealOptions = mealEntities.map { MealOption(name: $0.name ?? "", isFavourite: $0.isFavourite) }
+            // let mealEntities = try CoreDataStack.shared.context.fetch(fetchRequest)
+            // mealOptions = mealEntities.map { MealOption(name: $0.name ?? "", isFavourite: $0.isFavourite) }
             mealOptions = try CoreDataStack.shared.context.fetch(fetchRequest)
         } catch {
             print("Failed to fetch meal options: \(error)")
