@@ -35,9 +35,9 @@ Meal Randomizer is an engaging app that helps users make dining decisions effort
 
 ### Screenshots
 
-![Spin the Wheel](main.png)  
-![Meal Options](meal.png)  
-![User Preferences](result.png)  
+![Spin the Wheel](/Resources/main.png)  
+![Meal Options](/Resources/meal.png)  
+![User Preferences](/Resources/result.png)  
 
 ## Tech stack used
 
